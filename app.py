@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 st.title("⚖️ VendorWise AI — Strategic Procurement & Vendor Recommender")
-st.caption("Hybrid Decision-Support System: Deterministic MCDA Scoring + Gemini 1.5 Flash Qualitative Audit")
+st.caption("Hybrid Decision-Support System: Deterministic MCDA Scoring + Gemini 2.0 Flash Qualitative Audit")
 
 # ------------------------------------------------------------------------------
 # 2. SIDEBAR CONFIGURATION & API KEY
@@ -182,8 +182,8 @@ else:
                 {vendors_summary}
                 -------------------------------
                 """
-model = genai.GenerativeModel("gemini-2.0-flash")
-                model = genai.GenerativeModel("gemini-1.5-flash")
+
+                model = genai.GenerativeModel("gemini-2.0-flash")
                 response = model.generate_content(system_prompt)
                 
                 st.markdown(response.text)
